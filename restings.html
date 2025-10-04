@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rating & Kepuasan - ANTC STORE</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div class="loading-screen ratings-loading" id="loadingScreen">
+        <div class="loading-logo">
+            <div class="loading-brand">
+                <div class="logo ratings-logo">ANTC</div>
+                <div class="store-text ratings-text">RATINGS</div>
+            </div>
+        </div>
+        <div class="loader"></div>
+        <div class="loading-text">Memuat Rating & Testimoni...</div>
+    </div>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <div class="logo">ANTC</div>
+                <span>STORE</span>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="ratings.html" class="active">Rating</a>
+                <a href="admin.html">Admin</a>
+                <button id="themeToggle" class="theme-toggle">
+                    <span class="theme-icon">LIGHT</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container ratings-page">
+        <h1 class="page-title fade-in">Rating & Kepuasan Pelanggan</h1>
+
+        <div class="rating-stats">
+            <div class="overall-rating slide-up">
+                <div class="rating-icon">★</div>
+                <h2>Rating Keseluruhan</h2>
+                <div class="rating-display">
+                    <span class="rating-number" id="overallRating">5.0</span>
+                    <div class="stars">★★★★★</div>
+                </div>
+                <p id="totalRatings">0 ulasan</p>
+            </div>
+
+            <div class="satisfaction-meter slide-up">
+                <div class="satisfaction-icon">STATS</div>
+                <h3>Tingkat Kepuasan</h3>
+                <div class="meter-bar">
+                    <div class="meter-fill" id="satisfactionFill" style="width: 100%"></div>
+                </div>
+                <p id="satisfactionPercent">100% Puas</p>
+            </div>
+        </div>
+
+        <div class="rating-form-container fade-in">
+            <h2>Berikan Rating Anda</h2>
+            <form id="ratingForm" class="rating-form">
+                <div class="form-group">
+                    <label>Rating Anda</label>
+                    <div class="star-rating" id="starRating">
+                        <span class="star" data-rating="1">★</span>
+                        <span class="star" data-rating="2">★</span>
+                        <span class="star" data-rating="3">★</span>
+                        <span class="star" data-rating="4">★</span>
+                        <span class="star" data-rating="5">★</span>
+                    </div>
+                    <input type="hidden" id="ratingValue" name="rating" value="5">
+                </div>
+
+                <div class="form-group">
+                    <label for="reviewerName">Nama Anda</label>
+                    <input type="text" id="reviewerName" required placeholder="Nama Anda">
+                </div>
+
+                <div class="form-group">
+                    <label for="reviewText">Ulasan Anda</label>
+                    <textarea id="reviewText" required rows="4" placeholder="Ceritakan pengalaman Anda..."></textarea>
+                </div>
+
+                <button type="submit" class="btn-submit">Kirim Rating</button>
+            </form>
+        </div>
+
+        <div class="reviews-container">
+            <h2 class="section-title">Ulasan Pelanggan</h2>
+            <div id="reviewsList" class="reviews-list">
+                <div class="review-card fade-in-card">
+                    <div class="review-header">
+                        <div>
+                            <strong>Budi</strong>
+                            <div class="review-stars">★★★★★</div>
+                        </div>
+                        <span class="review-date">2 hari lalu</span>
+                    </div>
+                    <p class="review-text">Pelayanan cepat dan terpercaya! Joki CDID langsung masuk, recommended banget</p>
+                </div>
+
+                <div class="review-card fade-in-card">
+                    <div class="review-header">
+                        <div>
+                            <strong>Siti</strong>
+                            <div class="review-stars">★★★★★</div>
+                        </div>
+                        <span class="review-date">3 hari lalu</span>
+                    </div>
+                    <p class="review-text">Fast response admin nya, proses cepat. Puas banget sama hasilnya!</p>
+                </div>
+
+                <div class="review-card fade-in-card">
+                    <div class="review-header">
+                        <div>
+                            <strong>Andi</strong>
+                            <div class="review-stars">★★★★★</div>
+                        </div>
+                        <span class="review-date">5 hari lalu</span>
+                    </div>
+                    <p class="review-text">Sudah order berkali-kali, selalu memuaskan. ANTC STORE memang terbaik!</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 ANTC STORE - Roblox CDID Terpercaya</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

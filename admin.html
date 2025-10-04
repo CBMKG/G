@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - ANTC STORE</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <div class="loading-screen admin-loading" id="loadingScreen">
+        <div class="loading-logo">
+            <div class="loading-brand">
+                <div class="logo admin-logo">ANTC</div>
+                <div class="store-text admin-text">ADMIN</div>
+            </div>
+        </div>
+        <div class="loader"></div>
+        <div class="loading-text">Memuat Dashboard Admin...</div>
+    </div>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <div class="logo">ANTC</div>
+                <span>STORE - Admin</span>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="ratings.html">Rating</a>
+                <button id="themeToggle" class="theme-toggle">
+                    <span class="theme-icon">LIGHT</span>
+                </button>
+                <button id="logoutBtn" class="btn-logout" style="display: none;">Logout</button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container admin-page">
+        <div id="loginSection" class="login-container">
+            <div class="login-box fade-in">
+                <div class="login-icon">ADMIN</div>
+                <h1>Admin Login</h1>
+                <form id="adminLoginForm">
+                    <div class="form-group">
+                        <label for="adminUsername">Username</label>
+                        <input type="text" id="adminUsername" required placeholder="Masukkan username">
+                    </div>
+                    <div class="form-group">
+                        <label for="adminPassword">Password</label>
+                        <input type="password" id="adminPassword" required placeholder="Masukkan password"
+                            autocomplete="current-password">
+                    </div>
+                    <button type="submit" class="btn-submit">Login</button>
+                    <p class="error-message" id="loginError"></p>
+                </form>
+            </div>
+        </div>
+
+        <div id="dashboardSection" style="display: none;">
+            <h1 class="dashboard-title">Dashboard Admin</h1>
+
+            <div class="dashboard-stats">
+                <div class="stat-card">
+                    <div class="stat-icon">ALL</div>
+                    <h3>Total Orders</h3>
+                    <p class="stat-number" id="totalOrders">0</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">WAIT</div>
+                    <h3>Pending</h3>
+                    <p class="stat-number" id="pendingOrders">0</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">WORK</div>
+                    <h3>Processing</h3>
+                    <p class="stat-number" id="processingOrders">0</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">DONE</div>
+                    <h3>Completed</h3>
+                    <p class="stat-number" id="completedOrders">0</p>
+                </div>
+            </div>
+
+            <div class="dashboard-controls">
+                <button class="btn-action" onclick="refreshOrders()">
+                    <span class="btn-icon">↻</span> Refresh
+                </button>
+                <button class="btn-action btn-danger" onclick="clearAllOrders()">
+                    <span class="btn-icon">×</span> Clear All Orders
+                </button>
+            </div>
+
+            <div class="orders-table-container">
+                <h2>Data Orders</h2>
+                <div class="table-responsive">
+                    <table class="orders-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Waktu Order</th>
+                                <th>Paket</th>
+                                <th>Harga</th>
+                                <th>Username Roblox</th>
+                                <th>Password Roblox</th>
+                                <th>Status Akun</th>
+                                <th>Customer</th>
+                                <th>Status Order</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="ordersTableBody">
+                            <tr>
+                                <td colspan="10" class="no-orders">Belum ada order masuk</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 ANTC STORE - Admin Panel</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

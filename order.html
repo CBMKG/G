@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order - ANTC STORE</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div class="loading-screen order-loading" id="loadingScreen">
+        <div class="loading-logo">
+            <div class="loading-brand">
+                <div class="logo order-logo">ANTC</div>
+                <div class="store-text order-text">ORDER</div>
+            </div>
+        </div>
+        <div class="loader"></div>
+        <div class="loading-text">Mempersiapkan Form Order...</div>
+    </div>
+
+    <div class="order-success-modal" id="orderSuccessModal">
+        <div class="success-content">
+            <div class="success-icon">✓</div>
+            <h2 class="success-title">Order Berhasil!</h2>
+            <p class="success-message">Pesanan Anda telah berhasil dibuat</p>
+            <div class="redirect-info">
+                <div class="redirect-spinner"></div>
+                <span>Mengarahkan ke WhatsApp...</span>
+            </div>
+        </div>
+    </div>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <div class="logo">ANTC</div>
+                <span>STORE</span>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="ratings.html">Rating</a>
+                <a href="admin.html">Admin</a>
+                <button id="themeToggle" class="theme-toggle">
+                    <span class="theme-icon">LIGHT</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container order-page">
+        <div class="order-form-container fade-in">
+            <h1>Form Order</h1>
+            
+            <div class="selected-package" id="selectedPackageDisplay">
+                <h3>Paket yang dipilih:</h3>
+                <p id="packageInfo">-</p>
+            </div>
+
+            <form id="orderForm" class="order-form">
+                <div class="form-group">
+                    <label for="robloxUsername">Username Roblox</label>
+                    <input type="text" id="robloxUsername" name="robloxUsername" required placeholder="Masukkan username Roblox Anda">
+                </div>
+
+                <div class="form-group">
+                    <label for="robloxPassword">Password Roblox</label>
+                    <div class="password-wrapper">
+                        <input type="password" id="robloxPassword" name="robloxPassword" required placeholder="Masukkan password Roblox Anda">
+                        <button type="button" class="toggle-password" onclick="togglePasswordVisibility()">
+                            <span id="eyeIcon">●</span>
+                        </button>
+                    </div>
+                    <div class="security-notice">
+                        <div class="security-icon">SECURE</div>
+                        <div class="security-text">
+                            <strong>Keamanan Data Anda Terjamin</strong>
+                            <p>Password Anda tidak disimpan di server kami. Data akan langsung dikirim ke admin via WhatsApp untuk proses joki. Setelah joki selesai, kami sarankan untuk segera mengganti password akun Anda. Terima kasih!</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="customerName">Nama Anda (Opsional)</label>
+                    <input type="text" id="customerName" name="customerName" placeholder="Nama Anda">
+                </div>
+
+                <div class="form-group">
+                    <label for="customerPhone">Nomor WhatsApp (Opsional)</label>
+                    <input type="tel" id="customerPhone" name="customerPhone" placeholder="08xxxxxxxxxx">
+                </div>
+
+                <div class="form-group">
+                    <label for="notes">Catatan Tambahan (Opsional)</label>
+                    <textarea id="notes" name="notes" rows="3" placeholder="Catatan atau permintaan khusus"></textarea>
+                </div>
+
+                <button type="submit" class="btn-submit">
+                    <span class="btn-icon">WhatsApp</span>
+                    <span>Order Sekarang</span>
+                </button>
+            </form>
+
+            <div class="payment-info">
+                <h3>Informasi Pembayaran</h3>
+                <p>Pembayaran via Dana:</p>
+                <p class="payment-number">+62 813-3003-2894</p>
+            </div>
+        </div>
+    </main>
+
+    <div id="securityModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="security-shield">SECURITY</div>
+                <h2>Perhatian - Keamanan Data Anda</h2>
+            </div>
+            <div class="modal-body">
+                <div class="security-points">
+                    <div class="security-point">
+                        <span class="check-icon">✓</span>
+                        <p>Website ini aman dan terpercaya</p>
+                    </div>
+                    <div class="security-point">
+                        <span class="check-icon">✓</span>
+                        <p>Password TIDAK disimpan di server kami</p>
+                    </div>
+                    <div class="security-point">
+                        <span class="check-icon">✓</span>
+                        <p>Data kalian aman dan terjaga</p>
+                    </div>
+                    <div class="security-point warning">
+                        <span class="warning-icon">!</span>
+                        <p><strong>Setelah joki selesai, harap ganti password akun Anda untuk keamanan maksimal</strong></p>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-modal" onclick="closeSecurityModal()">Saya Mengerti</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 ANTC STORE - Roblox CDID Terpercaya</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
